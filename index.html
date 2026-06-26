@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StakePulse — Promotions</title>
+<style>
+:root{--bg:#080d12;--bg2:#0d1520;--bg3:#111d2a;--border:#1a2d3d;--text:#c8d8e8;--text2:#6a8a9a;--text3:#3a5a6a;--green:#00ff88;--amber:#ffd700;--blue:#00d4ff;--purple:#a855f7;--orange:#ff8c00;--red:#ff3355;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:2rem;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,215,0,.04),transparent 60%);pointer-events:none;}
+
+.lang-toggle{position:fixed;bottom:20px;left:20px;display:flex;gap:4px;z-index:200;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:4px;}
+.lang-btn{background:transparent;border:none;color:var(--text2);font-size:12px;font-weight:700;padding:4px 10px;border-radius:5px;cursor:pointer;transition:all .2s;}
+.lang-btn.active{background:var(--bg3);color:var(--text);}
+.lang-btn:hover{color:var(--text);}
+
+.back{display:inline-flex;align-items:center;gap:6px;color:var(--text2);font-size:12px;text-decoration:none;margin-bottom:2rem;transition:color .2s;}
+.back:hover{color:var(--text);}
+.header{text-align:center;margin-bottom:2.5rem;}
+.header-title{font-size:24px;font-weight:900;}
+.header-sub{font-size:13px;color:var(--text2);margin-top:6px;}
+.promos{display:flex;flex-direction:column;gap:16px;max-width:700px;margin:0 auto;}
+.promo-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+.promo-header{padding:18px 20px;display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--border);}
+.promo-emoji{font-size:28px;}
+.promo-title{font-size:16px;font-weight:800;}
+.promo-sub{font-size:11px;color:var(--text2);margin-top:2px;}
+.promo-badge{margin-left:auto;font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;white-space:nowrap;}
+.badge-active{background:rgba(0,255,136,.15);color:var(--green);border:1px solid rgba(0,255,136,.3);}
+.badge-soon{background:rgba(96,165,250,.15);color:var(--blue);border:1px solid rgba(96,165,250,.3);}
+.badge-ended{background:var(--bg3);color:var(--text3);border:1px solid var(--border);}
+.promo-body{padding:18px 20px;}
+.promo-rules{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+.promo-rule{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--text2);line-height:1.5;}
+.promo-rule-icon{font-size:14px;flex-shrink:0;margin-top:1px;}
+.promo-dates{display:flex;gap:10px;margin-bottom:16px;}
+.promo-date{flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 12px;}
+.promo-date-label{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;}
+.promo-date-val{font-size:13px;font-weight:700;font-family:monospace;}
+.promo-countdown{text-align:center;font-size:11px;color:var(--amber);font-family:monospace;margin-bottom:16px;}
+.promo-link{display:flex;align-items:center;justify-content:space-between;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;text-decoration:none;color:var(--text);font-size:12px;font-weight:600;transition:border-color .2s;}
+.promo-link:hover{border-color:var(--amber);}
+.promo-link-arrow{color:var(--amber);}
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+  <button class="lang-btn active" onclick="setLang('fr')">🇫🇷 FR</button>
+  <button class="lang-btn" onclick="setLang('en')">🇬🇧 EN</button>
+</div>
+
+<a class="back" href="https://stakepulse-app.github.io/portal" data-fr="← Retour au portail" data-en="← Back to portal">← Retour au portail</a>
+
+<div class="header">
+  <div class="header-title" data-fr="🎁 Promotions actives" data-en="🎁 Active promotions">🎁 Promotions actives</div>
+  <div class="header-sub" data-fr="Toutes les promos Stake suivies par StakePulse" data-en="All Stake promotions tracked by StakePulse">Toutes les promos Stake suivies par StakePulse</div>
+</div>
+
+<div class="promos">
+
+  <!-- WCT x3 -->
+  <div class="promo-card">
+    <div class="promo-header">
+      <div class="promo-emoji">⚽</div>
+      <div>
+        <div class="promo-title" data-fr="World Chat Tournament 2026 — Multiplicateur x3" data-en="World Chat Tournament 2026 — x3 Multiplier">World Chat Tournament 2026 — Multiplicateur x3</div>
+        <div class="promo-sub" data-fr="Paris sportifs gagnants comptent triple (hors chat Français)" data-en="Winning sports bets count triple (excluding French chat)">Paris sportifs gagnants comptent triple (hors chat Français)</div>
+      </div>
+      <span class="promo-badge badge-active" data-fr="✅ Active" data-en="✅ Active">✅ Active</span>
+    </div>
+    <div class="promo-body">
+      <div class="promo-dates">
+        <div class="promo-date">
+          <div class="promo-date-label" data-fr="Début" data-en="Start">Début</div>
+          <div class="promo-date-val">26/06/2025 · 01:50</div>
+        </div>
+        <div class="promo-date">
+          <div class="promo-date-label" data-fr="Fin" data-en="End">Fin</div>
+          <div class="promo-date-val">03/07/2025 · 23:59</div>
+        </div>
+      </div>
+      <div class="promo-countdown" id="countdown-wct">...</div>
+      <div class="promo-rules">
+        <div class="promo-rule">
+          <div class="promo-rule-icon">🎯</div>
+          <span data-fr="Chaque pari sportif gagnant posté dans le chat compte pour 3 points au classement" data-en="Each winning sports bet posted in the chat counts as 3 points in the leaderboard">Chaque pari sportif gagnant posté dans le chat compte pour 3 points au classement</span>
+        </div>
+        <div class="promo-rule">
+          <div class="promo-rule-icon">🇫🇷</div>
+          <span data-fr="Le chat Français est exclu du multiplicateur — les bets comptent x1 normalement" data-en="The French chat is excluded from the multiplier — bets count x1 as normal">Le chat Français est exclu du multiplicateur — les bets comptent x1 normalement</span>
+        </div>
+        <div class="promo-rule">
+          <div class="promo-rule-icon">📅</div>
+          <span data-fr="Uniquement les bets soumis après le 26/06/2025 à 01h50 (heure française)" data-en="Only bets submitted after 26/06/2025 at 01:50 (French time) are eligible">Uniquement les bets soumis après le 26/06/2025 à 01h50 (heure française)</span>
+        </div>
+        <div class="promo-rule">
+          <div class="promo-rule-icon">✅</div>
+          <span data-fr="Le bet doit être gagné et vérifié par le scraper StakePulse" data-en="The bet must be won and verified by the StakePulse scraper">Le bet doit être gagné et vérifié par le scraper StakePulse</span>
+        </div>
+      </div>
+      <a class="promo-link" href="https://tournament-wct.github.io/tournament" target="_blank">
+        <span data-fr="🌍 Voir le classement WCT" data-en="🌍 View WCT leaderboard">🌍 Voir le classement WCT</span>
+        <span class="promo-link-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Stake VS Eddie -->
+  <div class="promo-card">
+    <div class="promo-header">
+      <div class="promo-emoji">🎰</div>
+      <div>
+        <div class="promo-title">Stake VS Eddie — Elemental Ways</div>
+        <div class="promo-sub" data-fr="Atteindre le multiplicateur x208.30 sur Elemental Ways (Twist Gaming)" data-en="Hit the x208.30 multiplier on Elemental Ways (Twist Gaming)">Atteindre le multiplicateur x208.30 sur Elemental Ways (Twist Gaming)</div>
+      </div>
+      <span class="promo-badge badge-active" data-fr="✅ Active" data-en="✅ Active">✅ Active</span>
+    </div>
+    <div class="promo-body">
+      <div class="promo-rules">
+        <div class="promo-rule">
+          <div class="promo-rule-icon">🎯</div>
+          <span data-fr="Obtenir exactement le multiplicateur x208.30 sur le slot Elemental Ways" data-en="Hit exactly the x208.30 multiplier on the Elemental Ways slot">Obtenir exactement le multiplicateur x208.30 sur le slot Elemental Ways</span>
+        </div>
+        <div class="promo-rule">
+          <div class="promo-rule-icon">💰</div>
+          <span data-fr="Mise minimum requise — consulter les conditions officielles Stake" data-en="Minimum bet required — check the official Stake terms and conditions">Mise minimum requise — consulter les conditions officielles Stake</span>
+        </div>
+        <div class="promo-rule">
+          <div class="promo-rule-icon">⚡</div>
+          <span data-fr="Tracker en cours de développement — en attente d'une API dédiée Stake" data-en="Tracker under development — awaiting a dedicated Stake API">Tracker en cours de développement — en attente d'une API dédiée Stake</span>
+        </div>
+      </div>
+      <div class="promo-link" style="opacity:.5;cursor:not-allowed;">
+        <span data-fr="🔧 Tracker en développement" data-en="🔧 Tracker under development">🔧 Tracker en développement</span>
+        <span class="promo-link-arrow">⏳</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function updateCountdown() {
+  const end = new Date('2025-07-03T23:59:59').getTime();
+  const now = Date.now();
+  const diff = end - now;
+  const el = document.getElementById('countdown-wct');
+  const lang = document.documentElement.getAttribute('lang') || 'fr';
+  if (diff <= 0) {
+    el.textContent = lang === 'fr' ? 'Promo terminée' : 'Promotion ended';
+    return;
+  }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  el.textContent = lang === 'fr'
+    ? `⏱ Expire dans ${d}j ${h}h ${m}m ${s}s`
+    : `⏱ Expires in ${d}d ${h}h ${m}m ${s}s`;
+}
+
+function setLang(lang) {
+  document.querySelectorAll('[data-fr]').forEach(el => {
+    el.textContent = el.getAttribute(`data-${lang}`);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.includes(lang.toUpperCase()));
+  });
+  document.documentElement.setAttribute('lang', lang);
+  localStorage.setItem('sp_lang', lang);
+  updateCountdown();
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+const savedLang = localStorage.getItem('sp_lang') || 'fr';
+setLang(savedLang);
+</script>
+</body>
+</html>
